@@ -28,6 +28,9 @@
 
 The Blog app is a classic example of a blog website. which is a fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
 
+![ERD Diagram](app\assets\images\blog_app_erd_v1_1.png)
+
+
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
