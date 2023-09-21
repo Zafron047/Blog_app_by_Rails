@@ -27,7 +27,7 @@ RSpec.describe User, type: :model do
 
       subject.posts_counter = 0
       expect(subject).to be_valid
-      
+
       subject.posts_counter = 2
       expect(subject).to be_valid
     end
@@ -36,8 +36,8 @@ RSpec.describe User, type: :model do
   describe 'User Model Method test' do
     it 'should return three most recent posts' do
       user = User.create(name: 'Harry')
-      post0 = Post.create(title: 'Title0', author: user, created_at: 5.day.ago)
-      post1 = Post.create(title: 'Title1', author: user, created_at: 4.day.ago)
+      Post.create(title: 'Title0', author: user, created_at: 5.day.ago)
+      Post.create(title: 'Title1', author: user, created_at: 4.day.ago)
       post2 = Post.create(title: 'Title2', author: user, created_at: 3.day.ago)
       post3 = Post.create(title: 'Title3', author: user, created_at: 2.day.ago)
       post4 = Post.create(title: 'Title4', author: user, created_at: 1.day.ago)
