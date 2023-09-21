@@ -44,4 +44,25 @@ RSpec.describe Post, type: :model do
       expect(subject).to_not be_valid
     end
   end
+  
+  describe 'Post Model Method test' do
+    it 'should update posts_counter after create' do
+      user = User.create(name: 'Harry')
+      post = Post.create(title: 'Title', author: user)
+      expect(user.posts_counter).to eq(1)
+    end
+
+    it 'should return five most recent comments' do
+      user = User.create(name: 'Harry')
+      comment0 = Comment.create(author: user, post: subject, text: 'comment 1', created_at: 5.day.ago)
+      comment1 = Comment.create(author: user, post: subject, text: 'comment 2', created_at: 4.day.ago)
+      comment2 = Comment.create(author: user, post: subject, text: 'comment 3', created_at: 3.day.ago)
+      comment3 = Comment.create(author: user, post: subject, text: 'comment 4', created_at: 2.day.ago)
+      comment4 = Comment.create(author: user, post: subject, text: 'comment 5', created_at: 1.day.ago)
+      comment5 = Comment.create(author: user, post: subject, text: 'comment 6', created_at: Time.now)
+
+      result = subject.five_most_recent_comments
+      expect(result).to eq([comment5, comment4, comment3, comment2, comment1])
+    end
+  end
 end
