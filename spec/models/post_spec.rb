@@ -23,4 +23,25 @@ RSpec.describe Post, type: :model do
     end
   end
 
+  describe 'Post Model counter validation tests' do
+    it 'comments_counter must be an integer otherwise' do
+      subject.comments_counter = 'You are not an integer'
+      expect(subject).to_not be_valid
+    end
+
+    it 'comments_counter should be greater than or equal to zero' do
+      subject.comments_counter = -2
+      expect(subject).to_not be_valid
+    end
+
+    it 'likes_counter must be an integer otherwise' do
+      subject.likes_counter = 'You are not an integer'
+      expect(subject).to_not be_valid
+    end
+
+    it 'likes_counter should be greater than or equal to zero' do
+      subject.likes_counter = -2
+      expect(subject).to_not be_valid
+    end
+  end
 end
