@@ -14,8 +14,8 @@
       </div>
     </div>
   </div>
-  <div class="card border-success mb-3">
-    <div class="card-body text-success text-bg-light p-3">
+  <div class="card border-Secondary mb-3">
+    <div class="card-body text-Secondary text-bg-light p-3">
       <h5 class="card-title">Bio</h5>
       <p class="card-text"><%= @user.bio%></p>
       <a href='<%=new_user_post_path(@user.id, @post)%>'>
@@ -24,29 +24,27 @@
     </div>
   </div>
   <% @recent_posts.each do |post|%>
-    <div class="card border-dark mb-3">
+    <div class="card border-Secondary mb-3">
       <div class="card-body text-success">
         <a href = <%= user_post_path(post.author.id, post.id) %> style="text-decoration: none;">
           <h5 class="card-title">Post <%= @recent_posts.index(post) + 1%></h5>
         </a>
-        <p class="card-text">
-          <%= post.text %>
-        </p>
+        <p class="card-text"><%= post.text %></p>
         <div class= "d-flex card-text" style="gap: 10px;">
-          <a href='<%= new_user_post_comment_path(user_id: post.author_id, post_id: post.id)%>' class="btn btn-primary">
+          <a href='<%= new_user_post_comment_path(user_id: post.author_id, post_id: post.id)%>' class="btn btn-primary mt-3">
             <span>Comments</span>
           </a>
-          <p style="margin-top: 20px;">
-            <%= post.comments_counter%>
-          </p>
+          <a class="btn btn-primary mt-3">
+            <%= form_for(post.likes.new, url: user_post_likes_path(post.author, post)) do |f| %>
+              <%= f.hidden_field :author_id, value: @current_user %>
+              <%= f.submit "Like", style: "background-color: transparent; border: none; color: white;" %>
+            <% end %>
+          <a/>
         </div>
-        <button class= "btn btn-primary mt-3">
-          <%= form_for(post.likes.new, url: user_post_likes_path(post.author, post)) do |f| %>
-            <%= f.hidden_field :author_id, value: @current_user %>
-            <%= f.submit "Like:", class: "btn btn-primary" %>
-          <% end %>
-        </button>
-        <button class= "btn btn-light" disabled><%= post.likes_counter%></button>
+        <div class= "card-text" style="float: right">
+          <span class="card-text">Comments: <%= post.comments_counter%></span>
+          <span class="card-text">Likes: <%= post.likes_counter%></span>
+        </div>
       </div>
     </div>
   <% end %>
