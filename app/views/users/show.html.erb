@@ -40,6 +40,13 @@
             <%= post.comments_counter%>
           </p>
         </div>
+        <button class= "btn btn-primary mt-3">
+          <%= form_for(post.likes.new, url: user_post_likes_path(post.author, post)) do |f| %>
+            <%= f.hidden_field :author_id, value: @current_user %>
+            <%= f.submit "Like:", class: "btn btn-primary" %>
+          <% end %>
+        </button>
+        <button class= "btn btn-light" disabled><%= post.likes_counter%></button>
       </div>
     </div>
   <% end %>
