@@ -24,12 +24,15 @@
           <%= post.text %>
         </p>
         <div class= "d-flex card-text" style="gap: 10px;">
-          <a href='<%= new_user_post_comment_path(user_id: post.author_id, post_id: post.id)%>' class="btn btn-primary">
+          <a href='<%= new_user_post_comment_path(user_id: post.author_id, post_id: post.id)%>' class="btn btn-primary mt-3">
             <span>Comments</span>
           </a>
-          <p style="margin-top: 20px;">
-            <%= post.comments_counter%>
-          </p>
+          <button class= "btn btn-primary mt-3">
+            <%= form_for(post.likes.new, url: user_post_likes_path(post.author, post)) do |f| %>
+              <%= f.hidden_field :author_id, value: @current_user %>
+              <%= f.submit "Like", class: "btn btn-primary" %>
+            <% end %>
+          </button>
         </div>
         <div class= "card-text" style="float: right">
           <span class="card-text">Comments: <%= post.comments_counter%></span>
