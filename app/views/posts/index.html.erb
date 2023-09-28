@@ -23,6 +23,14 @@
         <p class="card-text">
           <%= post.text %>
         </p>
+        <div class= "d-flex card-text">
+          <a href='<%= new_user_post_comment_path(user_id: post.author_id, post_id: post.id)%>'>
+            <span class="btn btn-primary">Comments</span>
+          </a>
+          <button class= "btn btn-light" disabled>
+            <%= post.comments_counter%>
+          </button>
+        </div>
         <div class= "card-text" style="float: right">
           <span class="card-text">Comments: <%= post.comments_counter%></span>
           <span class="card-text">Likes: <%= post.likes_counter%></span>
