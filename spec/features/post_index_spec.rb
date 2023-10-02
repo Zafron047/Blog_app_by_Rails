@@ -14,6 +14,7 @@ RSpec.feature 'Post Index', type: :feature do
 
   scenario "see user's profile picture, username, number of posts and interactions" do
     visit user_posts_path(user)
+    sleep(5)
 
     expect(page).to have_selector('img[src="https://www.kasandbox.org/programming-images/avatars/leaf-blue.png"]')
     expect(page).to have_content('Tom')
