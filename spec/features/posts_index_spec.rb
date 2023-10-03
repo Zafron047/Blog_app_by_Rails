@@ -29,7 +29,7 @@ RSpec.feature 'Post Index', type: :feature do
     visit user_posts_path(user)
     first('.card-body a').click
     sleep(5)
-    
+
     expect(page).to have_content('hello Tom', wait: 5)
     expect(current_path).to eq user_post_path(user, post)
   end
