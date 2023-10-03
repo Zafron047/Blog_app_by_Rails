@@ -6,21 +6,22 @@
 
 # 📗 Table of Contents
 
-- [📖 About the Project](#about-project)
-  - [🛠 Built With](#built-with)
-    - [Tech Stack](#tech-stack)
-    - [Key Features](#key-features)
-- [💻 Getting Started](#getting-started)
-  - [Setup](#setup)
-  - [Prerequisites](#prerequisites)
-  - [Install](#install)
-  - [Test](#run-test)
-- [👥 Authors](#authors)
-- [🔭 Future Features](#future-features)
-- [🤝 Contributing](#contributing)
-- [⭐️ Show your support](#support)
-- [🙏 Acknowledgements](#acknowledgements)
-- [📝 License](#license)
+- [📗 Table of Contents](#-table-of-contents)
+- [📖 Blog App ](#-blog-app-)
+  - [🛠 Built With ](#-built-with-)
+    - [Tech Stack ](#tech-stack-)
+    - [Key Features ](#key-features-)
+  - [💻 Getting Started ](#-getting-started-)
+    - [Prerequisites](#prerequisites)
+    - [Setup](#setup)
+    - [Install](#install)
+    - [Run Test](#run-test)
+  - [👥 Authors ](#-authors-)
+  - [🔭 Future Features ](#-future-features-)
+  - [🤝 Contributing ](#-contributing-)
+  - [⭐️ Show your support ](#️-show-your-support-)
+  - [🙏 Acknowledgments ](#-acknowledgments-)
+  - [📝 License ](#-license-)
 
 <!-- PROJECT DESCRIPTION -->
 
@@ -101,6 +102,11 @@ rspec spec --format documentation
 - GitHub: [&nbsp; &nbsp; @githubhandle](https://github.com/Zafron047)
 - Twitter: [&nbsp; &nbsp; @twitterhandle](https://twitter.com/NohainZ)
 - LinkedIn: [&nbsp; LinkedIn](https://www.linkedin.com/in/nohain-islam/)
+
+👤 Muhammad Amran Khan (Mike)
+- GitHub: [&nbsp; &nbsp; @githubhandle](https://github.com/Mike111222)
+- Twitter: [&nbsp; &nbsp; @twitterhandle](https://twitter.com/iMike111222)
+- LinkedIn: [&nbsp; LinkedIn](https://www.linkedin.com/in/iMikeKhan)
 
 <!-- FUTURE FEATURES -->
 
