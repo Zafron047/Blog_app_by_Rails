@@ -14,7 +14,6 @@ RSpec.feature 'Post Index', type: :feature do
 
   scenario "see user's profile picture, username, number of posts, interactions, etc." do
     visit user_posts_path(user)
-    # sleep(15)
     expect(page).to have_selector('img[src="https://www.kasandbox.org/programming-images/avatars/leaf-blue.png"]')
     expect(page).to have_content('Tom')
     expect(page).to have_content('Number of posts: 1')
@@ -28,7 +27,6 @@ RSpec.feature 'Post Index', type: :feature do
   scenario "When I click on a post, it redirects me to that post's show page and I can see first comment." do
     visit user_posts_path(user)
     first('.card-body a').click
-    sleep(5)
 
     expect(page).to have_content('hello Tom', wait: 5)
     expect(current_path).to eq user_post_path(user, post)

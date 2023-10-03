@@ -40,13 +40,11 @@ RSpec.feature 'User Show', type: :feature do
 
   scenario 'redirects to the post show page when you click on a users post' do
     click_link 'Post title 1'
-    sleep(0.05)
     expect(current_path).to eq(user_post_path(user, post1))
   end
 
   scenario 'redirects to the users posts index page when you click on "See all posts"' do
     click_link 'See All Posts'
-    sleep(0.05)
     expected_path = user_posts_path(user).chomp('/')
     actual_path = page.current_path.chomp('/')
     expect(actual_path).to eq(expected_path)

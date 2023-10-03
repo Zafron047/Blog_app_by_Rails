@@ -16,11 +16,11 @@ RSpec.feature 'Post Index', type: :feature do
     expect(page).to have_selector('img[src="https://www.spongebobshop.com/cdn/shop/products/SB-Standees-Spong-1_900x.jpg?v=1603744567"]')
   end
 
-  scenario "I can see the number of posts each user has written." do
+  scenario 'I can see the number of posts each user has written.' do
     user1 = User.find_by(name: 'Harry')
-    post1 = Post.create(author: user1, title: 'First Post')
-    post2 = Post.create(author: user1, title: 'Second Post')
-    post3 = Post.create(author: user1, title: 'Third Post')
+    _post1 = Post.create(author: user1, title: 'First Post')
+    _post2 = Post.create(author: user1, title: 'Second Post')
+    _post3 = Post.create(author: user1, title: 'Third Post')
 
     visit users_path
 
@@ -31,7 +31,9 @@ RSpec.feature 'Post Index', type: :feature do
     visit users_path
     click_link 'Sponge Bob'
 
-    expect(page).to have_selector('img[src="https://www.spongebobshop.com/cdn/shop/products/SB-Standees-Spong-1_900x.jpg?v=1603744567"]', wait: 5)
+    expect(page).to have_selector(
+      'img[src="https://www.spongebobshop.com/cdn/shop/products/SB-Standees-Spong-1_900x.jpg?v=1603744567"]', wait: 5
+    )
     expected_path = user_path(User.find_by(name: 'Sponge Bob'))
     expect(current_path).to eq(expected_path)
   end
