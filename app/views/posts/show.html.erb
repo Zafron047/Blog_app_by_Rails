@@ -2,7 +2,7 @@
   <div class="card mb-3" style="width: 100%;">
     <div class="card-body text-success text-bg-light p-3">
       <div class="d-flex justify-content-between">
-        <h4 class="card-title">Post by <%= @post_id %><%= @post.author.name %></h4>
+        <h4 class="card-title PostAuthor">Post by <%= @post_id %><%= @post.author.name %></h4>
         <div>
           <span class="card-text">Comments: <%= @post.comments_counter%></span>
           <span class="card-text">Likes: <%= @post.likes_counter%></span>
@@ -21,7 +21,7 @@
     <div class="card mb-3" style="width: 100%;">
       <div class="card-body text-success text-bg-light p-3">
         <% @post.comments.each do |comment|%>
-          <p class = "m-0"><strong><%= comment.author.name%></strong>:
+          <p class = "m-0 CommentsAuthor"><strong><%= comment.author.name%></strong>:
             <%= comment.text%>
           </p>
           <p class="card-text">
