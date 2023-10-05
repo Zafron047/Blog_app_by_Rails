@@ -1,11 +1,18 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
+  before_action :authenticate_user!
+
   def index
     @user = User.find(params[:user_id])
     @posts = @user.posts.includes(:comments)
   end
 
   def show
-    @post = Post.find(params[:id])
+    @post = Post.new
+    @post = Post.find params[:id]
+    @posts = Post.all
+    @user = current_user
+    @recent_comments = @post.five_most_recent_comments
   end
 
   def new
