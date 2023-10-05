@@ -42,7 +42,7 @@ class PostsController < ApplicationController
     flash[:notice] = 'Post deleted.'
     redirect_to user_posts_path(@user)
   end
-  
+
   def post_params
     params.require(:post).permit(:title, :text)
   end
