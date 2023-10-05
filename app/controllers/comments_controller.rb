@@ -24,7 +24,7 @@ class CommentsController < ApplicationController
     @user = current_user
     @comment = Comment.find(params[:id])
 
-    if @comment.user == @user
+    if @comment.author == @user
       @comment.destroy
       flash[:notice] = 'Deleted comment .'
     end

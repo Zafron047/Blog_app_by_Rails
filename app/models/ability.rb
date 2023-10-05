@@ -21,7 +21,7 @@ class Ability
       end
 
       can :destroy, Comment do |comment|
-        comment.user == user
+        comment.author == user
       end
       
       can :create, Post
